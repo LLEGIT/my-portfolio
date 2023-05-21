@@ -1,12 +1,10 @@
 import { AppBar, Box, IconButton, Link, Menu, MenuItem, Select, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import frTranslations from "./../../translations/fr.json";
-import enTranslations from "./../../translations/en.json";
 import { useState } from "react";
 import { Brightness2, Flag, GitHub, LightMode, LinkedIn, Mail } from "@mui/icons-material";
 
-export default function Navbar({ onThemeChange }) {
-    const [translations, setTranslations] = useState(sessionStorage.getItem("translation") === "fr" ? frTranslations : enTranslations);
+export default function Navbar({ onThemeChange , onLanguageChange, frTranslations, enTranslations}) {
+    const [translations, setTranslations] = useState(sessionStorage.getItem("translation") === "en" ? enTranslations : frTranslations);
     const [anchorElOne, setAnchorElOne] = useState(null);
     const [anchorElTwo, setAnchorElTwo] = useState(null);
     const links = [
@@ -34,6 +32,7 @@ export default function Navbar({ onThemeChange }) {
 
     const handleLanguageSelect = (language) => {
         sessionStorage.setItem("translation", language);
+        onLanguageChange(language);
         setTranslations(language === "fr" ? frTranslations : enTranslations);
         setAnchorElTwo(null);
     };

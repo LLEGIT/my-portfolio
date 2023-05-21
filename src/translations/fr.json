@@ -4,5 +4,17 @@
         "language": "🇫🇷 FR",
         "bio": "Qui suis-je?",
         "timeline": "Mon parcours"
+    },
+    "bio": {
+        "title": "Qui suis-je ?",
+        "content": [
+            "Jeune développeur web passionné par les technologies innovantes, la création d'applications significatives et les défis techniques.",
+            "Expérience solide en développement web avec PHP, Symfony, React, HTML/CSS/JS, et plus encore.",
+            "Je possède une approche proactive pour résoudre les défis techniques en utilisant mes connaissances et la collaboration avec l'équipe.",
+            "Par ailleurs, je suis motivé pour apprendre rapidement de nouvelles technologies et les intégrer dans mes projets.",
+            "Passionné de tennis, de randonnée et de jeux vidéo, cela me permet de rester en forme et de développer des compétences transversales.",
+            "En alternance actuellement, je souhaite continuer à développer mes compétences tout en travaillant sur des projets stimulants et innovants.",
+            "Convaincu de pouvoir apporter une contribution significative à une entreprise valorisant le travail d'équipe, la créativité et l'innovation."
+          ]          
     }
 }

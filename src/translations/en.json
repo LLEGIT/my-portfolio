@@ -4,5 +4,18 @@
         "language": "🇬🇧 EN",
         "bio": "Who am I ?",
         "timeline": "My career path"
+    },
+    "bio": {
+        "title": "Who am I ?",
+        "content": [
+            "Young web developer passionate about innovative technologies, creating meaningful applications, and tackling technical challenges.",
+            "Strong experience in web development with PHP, Symfony, React, HTML/CSS/JS, and more.",
+            "Proactive approach to solving technical challenges by leveraging my knowledge and collaborating with the team.",
+            "Motivated to quickly learn new technologies and integrate them into my projects.",
+            "Passionate about tennis, mountain hiking, and video games, which help me developping a winning mentality and keeping in good shape.",
+            "Currently in an apprenticeship, I aim to continue developing my skills while working on stimulating and innovative projects.",
+            "Confident in my ability to make a significant contribution to a company that values teamwork, creativity, and innovation."
+
+        ]
     }
 }
