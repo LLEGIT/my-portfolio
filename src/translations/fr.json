@@ -3,7 +3,9 @@
         "title": "Mon portfolio de développeur web",
         "language": "🇫🇷 FR",
         "bio": "Qui suis-je?",
-        "timeline": "Mon parcours"
+        "stack": "Ma stack",
+        "timeline": "Mon parcours",
+        "projects": "Mes projets"
     },
     "bio": {
         "title": "Qui suis-je ?",
@@ -16,5 +18,8 @@
             "En alternance actuellement, je souhaite continuer à développer mes compétences tout en travaillant sur des projets stimulants et innovants.",
             "Convaincu de pouvoir apporter une contribution significative à une entreprise valorisant le travail d'équipe, la créativité et l'innovation."
           ]          
+    },
+    "stack": {
+        "title": "Ma stack"
     }
 }

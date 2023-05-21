@@ -3,7 +3,9 @@
         "title": "My web developper portfolio",
         "language": "🇬🇧 EN",
         "bio": "Who am I ?",
-        "timeline": "My career path"
+        "stack": "My stack",
+        "timeline": "My career path",
+        "projects": "My projects"
     },
     "bio": {
         "title": "Who am I ?",
@@ -15,7 +17,9 @@
             "Passionate about tennis, mountain hiking, and video games, which help me developping a winning mentality and keeping in good shape.",
             "Currently in an apprenticeship, I aim to continue developing my skills while working on stimulating and innovative projects.",
             "Confident in my ability to make a significant contribution to a company that values teamwork, creativity, and innovation."
-
         ]
+    },
+    "stack": {
+        "title": "My stack"
     }
 }

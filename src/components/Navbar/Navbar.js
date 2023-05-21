@@ -7,12 +7,16 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
     const [translations, setTranslations] = useState(sessionStorage.getItem("translation") === "en" ? enTranslations : frTranslations);
     const [anchorElOne, setAnchorElOne] = useState(null);
     const [anchorElTwo, setAnchorElTwo] = useState(null);
-    const links = [
-        ["#bio", translations.navbar.bio],
-        ["#timeline", translations.navbar.timeline],
+    const desktopLinks = [
         ["https://www.linkedin.com/in/theogillet/", <LinkedIn />],
         ["https://github.com/LLEGIT", <GitHub />],
         ["mailto:theogillet.developpement@gmail.com", <Mail />]
+    ];
+    const mobileLinks = [
+        ["#bio", translations.navbar.bio],
+        ["#stack", translations.navbar.stack],
+        ["#timeline", translations.navbar.timeline],
+        ["#projects", translations.navbar.projects]
     ];
     const [chosenTheme, setChosenTheme] = useState(sessionStorage.getItem("theme") ?? "light");
 
@@ -45,7 +49,7 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
 
     return (
         <Box flexGrow={1}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
                     <IconButton
                         id="menu-btn-1"
@@ -71,8 +75,8 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
                         open={Boolean(anchorElOne)}
                         onClose={handleClose}
                     >
-                        {links.map((link, key) => <MenuItem key={key} onClick={handleClose}>
-                            <Link underline="none" target="_blank" color="inherit" href={link[0]}>
+                        {mobileLinks.map((link, key) => <MenuItem key={key} onClick={handleClose}>
+                            <Link underline="none" target={key > 3 ? "_blank" : "_self"} color="inherit" href={link[0]}>
                                 {link[1]}
                             </Link>
                         </MenuItem>)}
