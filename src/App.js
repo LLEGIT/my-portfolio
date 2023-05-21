@@ -55,7 +55,7 @@ function App() {
         <Grid container padding={{xs: 5, lg: 0}} gap={3}>
           {/* Mobile links */}
           <Grid item xs={12} justifyContent="space-around" sx={{display: {xs: "flex", lg: "none"}}}>
-            {mobileLinks.map((link, key) => <Link color="inherit" key={0} target="_blank" underline="none" href={link[0]}>
+            {mobileLinks.map((link, key) => <Link color="inherit" key={key} target="_blank" underline="none" href={link[0]}>
               {link[1]}
             </Link>)}
           </Grid>
