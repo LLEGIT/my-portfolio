@@ -1,6 +1,8 @@
 {
     "navbar": {
         "title": "My web developper portfolio",
-        "language": "🇬🇧 EN"
+        "language": "🇬🇧 EN",
+        "bio": "Who am I ?",
+        "timeline": "My career path"
     }
 }
