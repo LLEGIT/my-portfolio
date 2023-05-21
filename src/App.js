@@ -112,7 +112,7 @@ function App() {
           </Grid>
           {/* Timeline */}
           <Grid id="timeline" container>
-            <CareerPath />
+            <CareerPath translations={translations} />
           </Grid>
         </Grid>
       </Grid>

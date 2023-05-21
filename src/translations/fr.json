@@ -21,5 +21,11 @@
     },
     "stack": {
         "title": "Ma stack"
+    },
+    "timeline": {
+        "item1": "(Sep 2022-Nov 2023) Développeur web en alternance, Mecatechnic SAS",
+        "item2": "(Nov 2021-Nov 2023) Web@cadémie, Epitech Lille",
+        "item3": "(Sep 2019-Dec 2020) Licence LEA anglais-espagnol, Université Bordeaux Montaigne",
+        "item4": "(Juillet 2019) Bac ES section européenne, Lycée Sud Médoc"
     }
 }
