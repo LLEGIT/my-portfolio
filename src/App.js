@@ -16,6 +16,7 @@ import TwigLogo from "./assets/images/twig.png";
 import MuiLogo from "./assets/images/mui.png";
 import BootstrapLogo from "./assets/images/bootstrap.png";
 import SassLogo from "./assets/images/sass.png";
+import CareerPath from './components/CareerPath/CareerPath';
 
 function App() {
   const lightTheme = createTheme({
@@ -63,7 +64,7 @@ function App() {
             enTranslations={enTranslations}
           />
         </Grid>
-        <Grid container padding={{xs: 5, lg: 0}} gap={3}>
+        <Grid id="bio" container padding={{xs: 5, lg: 0}} gap={3}>
           {/* Mobile links */}
           <Grid item xs={12} justifyContent="space-around" sx={{display: {xs: "flex", lg: "none"}}}>
             {mobileLinks.map((link, key) => <Link color="inherit" key={key} target={key === 2 ? "_self" : "_blank"} underline="none" href={link[0]}>
@@ -84,7 +85,7 @@ function App() {
             </Grid>
           </Grid>
           {/* Stack section */}
-          <Grid container gap={3}>
+          <Grid id="stack" container gap={3}>
             <Typography variant="h5" fontWeight="bold">
               {translations.stack.title}
             </Typography>
@@ -108,6 +109,10 @@ function App() {
                 </Grid>
               </Grid>)}
             </Grid>
+          </Grid>
+          {/* Timeline */}
+          <Grid id="timeline" container>
+            <CareerPath />
           </Grid>
         </Grid>
       </Grid>
