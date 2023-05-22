@@ -2,7 +2,7 @@ import './App.css';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Box, Grid, Link, ThemeProvider, Typography, createTheme } from '@mui/material';
 import Navbar from './components/Navbar/Navbar';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import frTranslations from "./translations/fr.json";
 import enTranslations from "./translations/en.json";
 import { GitHub, LinkedIn, Mail } from '@mui/icons-material';
@@ -112,6 +112,11 @@ function App() {
           </Grid>
           {/* Timeline */}
           <Grid id="timeline" container>
+            <Grid item xs={12}>
+              <Typography variant="h5" fontWeight="bold">
+                {translations.timeline.title}
+              </Typography>
+            </Grid>
             <CareerPath translations={translations} />
           </Grid>
         </Grid>

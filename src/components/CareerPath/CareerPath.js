@@ -1,5 +1,5 @@
 import { School, Work, WorkspacePremium } from "@mui/icons-material";
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from "@mui/lab";
+import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator, timelineItemClasses } from "@mui/lab";
 
 export default function CareerPath({translations}) {
     const timelineItems = [
@@ -10,15 +10,24 @@ export default function CareerPath({translations}) {
     ];
     const colors = ["primary", "secondary", "error", "success", "warning"]
 
-    return <Timeline position="alternate">
-        {timelineItems.map((item, key) => <TimelineItem>
-            <TimelineSeparator>
-                <TimelineDot color={colors[key]}>
-                    {item[1]}
-                </TimelineDot>
-                <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent>{item[0]}</TimelineContent>
-        </TimelineItem>)}
-    </Timeline>
+    return (
+        <Timeline
+            sx={{
+                [`& .${timelineItemClasses.root}:before`]: {
+                    flex: 0,
+                    padding: 0,
+                },
+            }}
+        >
+            {timelineItems.map((item, key) => <TimelineItem key={key}>
+                <TimelineSeparator>
+                    <TimelineDot color={colors[key]}>
+                        {item[1]}
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>{item[0]}</TimelineContent>
+            </TimelineItem>)}
+        </Timeline>
+    )
 }

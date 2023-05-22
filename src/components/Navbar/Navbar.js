@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Link, Menu, MenuItem, Select, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, IconButton, Link, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import { Brightness2, Flag, GitHub, LightMode, LinkedIn, Mail } from "@mui/icons-material";
@@ -19,6 +19,8 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
         ["#projects", translations.navbar.projects]
     ];
     const [chosenTheme, setChosenTheme] = useState(sessionStorage.getItem("theme") ?? "light");
+
+
 
     const handleMenu = (event) => {
         if (event.currentTarget.id === "menu-btn-1") {
