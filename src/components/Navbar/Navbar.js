@@ -16,7 +16,6 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
         ["#bio", translations.navbar.bio],
         ["#stack", translations.navbar.stack],
         ["#timeline", translations.navbar.timeline],
-        ["#projects", translations.navbar.projects]
     ];
     const [chosenTheme, setChosenTheme] = useState(sessionStorage.getItem("theme") ?? "light");
 
