@@ -1,11 +1,12 @@
 import './App.css';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box, Grid, Link, ThemeProvider, Typography, createTheme } from '@mui/material';
+import { Avatar, Box, Grid, Link, ThemeProvider, Typography, createTheme } from '@mui/material';
 import Navbar from './components/Navbar/Navbar';
 import { useState } from 'react';
 import frTranslations from "./translations/fr.json";
 import enTranslations from "./translations/en.json";
 import { GitHub, LinkedIn, Mail } from '@mui/icons-material';
+import AvatarPic from "./assets/images/avatar.png";
 import HtmlCssJsLogo from "./assets/images/html_css_js.png";
 import MongoDbLogo from "./assets/images/mongodb.png";
 import NestJsLogo from "./assets/images/nestjs.png";
@@ -17,6 +18,7 @@ import MuiLogo from "./assets/images/mui.png";
 import BootstrapLogo from "./assets/images/bootstrap.png";
 import SassLogo from "./assets/images/sass.png";
 import CareerPath from './components/CareerPath/CareerPath';
+import ContactForm from './components/ContactForm/ContactForm';
 
 function App() {
   const lightTheme = createTheme({
@@ -72,11 +74,19 @@ function App() {
             </Link>)}
           </Grid>
           {/* Bio section */}
-          <Grid container gap={1}>
-            <Grid item xs={12}>
+          <Grid container gap={3}>
+            <Grid item xs={12} display="flex" justifyContent="space-between" alignItems="center">
               <Typography variant="h5" fontWeight="bold">
                 {translations.bio.title}
               </Typography>
+              <Avatar 
+                alt="Picture of myself" 
+                src={AvatarPic}
+                sx={{
+                  width: 70,
+                  height: 70
+                }}
+              />
             </Grid>
             <Grid item xs={12}>
                 {translations.bio.content.map((line, key) => <Typography textAlign="justify" variant="body1" key={key}>
@@ -118,6 +128,15 @@ function App() {
               </Typography>
             </Grid>
             <CareerPath translations={translations} />
+          </Grid>
+          {/* Contact form */}
+          <Grid container gap={2}>
+            <Grid item xs={12}>
+                <Typography variant="h5" fontWeight="bold">
+                  {translations.contactForm.title}
+                </Typography>
+            </Grid>
+            <ContactForm translations={translations} />
           </Grid>
         </Grid>
       </Grid>
