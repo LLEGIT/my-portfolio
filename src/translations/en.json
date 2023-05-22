@@ -28,5 +28,20 @@
         "item2": "Web@cadémie, Epitech Lille (Nov 2021-Nov 2023)",
         "item3": "Bachelor's Degree in English-Spanish Applied Languages, University of Bordeaux Montaigne (Sep 2019-Dec 2020)",
         "item4": "Baccalaureate in Social Sciences, Sud Médoc Highschool (July 2019)"
+    },
+    "contact-form": {
+        "title": "Contact me",
+        "email": {
+            "label": "Email Address",
+            "error-message": "Invalid format (e.g., test@gmail.com)",
+            "empty-message": "Please fill in this field"
+        },
+        "message": {
+            "label": "Your Message",
+            "empty-message": "Please fill in this field"
+        },
+        "submit-btn": {
+            "label": "Submit"
+        }
     }
 }
