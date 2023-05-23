@@ -24,8 +24,7 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
     const handleMenu = (event) => {
         if (event.currentTarget.id === "menu-btn-1") {
             setAnchorElOne(event.currentTarget);
-        }
-        else {
+        } else {
             setAnchorElTwo(event.currentTarget);
         }
     };

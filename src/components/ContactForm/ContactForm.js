@@ -4,6 +4,9 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactForm({ translations }) {
+    const [name, setName] = useState("");
+    const [nameError, setNameError] = useState(false);
+    const [nameHelperTxt, setNameHelperTxt] = useState("");
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState(false);
     const [emailHelperTxt, setEmailHelperTxT] = useState("");
@@ -11,6 +14,7 @@ export default function ContactForm({ translations }) {
     const [messageError, setMessageError] = useState(false);
     const [messageHelperTxt, setMessageHelperTxt] = useState("");
     const [loading, setLoading] = useState(false);
+    const nameRegex = /^[A-Za-zÀ-ÿ\s.]+$/;
     const emailRegex = "[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+";
 
     const handleChange = (value, valueSetter, errorSetter, helperTextSetter) => {
@@ -20,12 +24,20 @@ export default function ContactForm({ translations }) {
     }
 
     const handleSubmit = () => {
+        // Name verification
+        if (name === "") {
+            setNameError(true);
+            setNameHelperTxt(translations.contactForm.name.emptyMessage);
+        } else if (!nameRegex(name)) {
+            setNameError(true);
+            setNameHelperTxt(translations.contactForm.name.errorMessage);
+        }
+
         // Email verification
         if (email === "") {
             setEmailError(true);
             setEmailHelperTxT(translations.contactForm.email.emptyMessage);
-        }
-        else if (!emailRegex.test(email)) {
+        } else if (!emailRegex.test(email)) {
             setEmailError(true);
             setEmailHelperTxT(translations.contactForm.email.errorMessage);
         }
@@ -36,10 +48,31 @@ export default function ContactForm({ translations }) {
             setMessageHelperTxt(translations.contactForm.message.emptyMessage);
         }
 
-        emailjs.send("service_l0nsskj", "template_diodsv4", "gDU_JwY4fB9YX05ah")
+        if (email !== "" && emailRegex.test(email) && message !== "") {
+            let templateParams = {
+                from_name: name, 
+                message: message
+            }
+            emailjs.send(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                templateParams,
+                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+            );
+        }
     }
 
     return <Grid container gap={3}>
+        <Grid item xs={12}>
+            <TextField 
+                value={name}
+                onChange={(e) => handleChange(e.target.value, setName, setNameError, setNameHelperTxt)}
+                label={translations.contactForm.name.label}
+                error={nameError}
+                helperText={nameHelperTxt}
+                fullWidth
+        />
+        </Grid>
         <Grid item xs={12}>
             <TextField 
                 value={email}
