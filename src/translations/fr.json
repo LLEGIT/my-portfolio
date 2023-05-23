@@ -21,5 +21,36 @@
     },
     "stack": {
         "title": "Ma stack"
+    },
+    "timeline": {
+        "title": "Mon parcours",
+        "item1": "Développeur web en alternance, Mecatechnic SAS (Sep 2022-Nov 2023)",
+        "item2": "Web@cadémie, Epitech Lille (Nov 2021-Nov 2023)",
+        "item3": "Licence LEA anglais-espagnol, Université Bordeaux Montaigne (Sep 2019-Dec 2020)",
+        "item4": "Bac ES section européenne, Lycée Sud Médoc (Juillet 2019)"
+    },
+    "contactForm": {
+        "title": "Me contacter",
+        "name": {
+            "label": "Votre nom",
+            "errorMessage": "Caractères interdits",
+            "emptyMessage": "Veuillez remplir ce champ"
+        },        
+        "email": {
+            "label": "Adresse mail",
+            "errorMessage": "Format invalide (ex: test@gmail.com)",
+            "emptyMessage": "Veuillez remplir ce champ"
+        },
+        "message": {
+            "label": "Votre message",
+            "emptyMessage": "Veuillez remplir ce champ"
+        },
+        "submitBtn": {
+            "label": "Valider"
+        },
+        "toastMessage": {
+            "success": "Votre message a bien été envoyé ! Je le traiterai dans les meilleurs délais",
+            "error": "Impossible d'envoyer le message, veuillez réessayer ultérieurement."
+        }
     }
 }

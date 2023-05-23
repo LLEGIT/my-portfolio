@@ -21,5 +21,37 @@
     },
     "stack": {
         "title": "My stack"
+    },
+    "timeline": {
+        "title": "My career path",
+        "item1": "Web Developer Apprentice, Mecatechnic SAS (Sep 2022-Nov 2023)",
+        "item2": "Web@cadémie, Epitech Lille (Nov 2021-Nov 2023)",
+        "item3": "Bachelor's Degree in English-Spanish Applied Languages, University of Bordeaux Montaigne (Sep 2019-Dec 2020)",
+        "item4": "Baccalaureate in Social Sciences, Sud Médoc Highschool (July 2019)"
+    },
+    "contactForm": {
+        "title": "Contact me",
+        "name": {
+            "label": "Your Name",
+            "errorMessage": "Forbidden characters",
+            "emptyMessage": "Please fill in this field"
+        },
+        "email": {
+            "label": "Email Address",
+            "errorMessage": "Invalid format (e.g., test@gmail.com)",
+            "emptyMessage": "Please fill in this field"
+        },
+        "message": {
+            "label": "Your Message",
+            "emptyMessage": "Please fill in this field"
+        },
+        "submitBtn": {
+            "label": "Submit"
+        },
+        "toastMessage": {
+            "success": "Your message has been sent successfully! I will process it as soon as possible.",
+            "error": "Unable to send the message, please try again later."
+        }
+        
     }
 }
