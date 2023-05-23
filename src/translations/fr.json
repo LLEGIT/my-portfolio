@@ -47,6 +47,10 @@
         },
         "submitBtn": {
             "label": "Valider"
+        },
+        "toastMessage": {
+            "success": "Votre message a bien été envoyé ! Je le traiterai dans les meilleurs délais",
+            "error": "Impossible d'envoyer le message, veuillez réessayer ultérieurement."
         }
     }
 }

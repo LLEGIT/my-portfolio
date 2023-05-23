@@ -19,6 +19,8 @@ import BootstrapLogo from "./assets/images/bootstrap.png";
 import SassLogo from "./assets/images/sass.png";
 import CareerPath from './components/CareerPath/CareerPath';
 import ContactForm from './components/ContactForm/ContactForm';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const lightTheme = createTheme({
@@ -58,6 +60,7 @@ function App() {
     <ThemeProvider theme={chosenTheme}>
       <CssBaseline />
       <Grid container>
+        <ToastContainer />
         <Grid item xs={12} marginBottom={5}>
           <Navbar 
             onThemeChange={handleChosenTheme} 

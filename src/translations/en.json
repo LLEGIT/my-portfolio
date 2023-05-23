@@ -47,6 +47,11 @@
         },
         "submitBtn": {
             "label": "Submit"
+        },
+        "toastMessage": {
+            "success": "Your message has been sent successfully! I will process it as soon as possible.",
+            "error": "Unable to send the message, please try again later."
         }
+        
     }
 }

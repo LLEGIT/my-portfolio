@@ -2,6 +2,7 @@ import { LoadingButton } from "@mui/lab";
 import { Grid, TextField } from "@mui/material";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 export default function ContactForm({ translations }) {
     const [name, setName] = useState("");
@@ -15,7 +16,7 @@ export default function ContactForm({ translations }) {
     const [messageHelperTxt, setMessageHelperTxt] = useState("");
     const [loading, setLoading] = useState(false);
     const nameRegex = /^[A-Za-zÀ-ÿ\s.]+$/;
-    const emailRegex = "[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+";
+    const emailRegex = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
 
     const handleChange = (value, valueSetter, errorSetter, helperTextSetter) => {
         valueSetter(value);
@@ -28,7 +29,7 @@ export default function ContactForm({ translations }) {
         if (name === "") {
             setNameError(true);
             setNameHelperTxt(translations.contactForm.name.emptyMessage);
-        } else if (!nameRegex(name)) {
+        } else if (!nameRegex.test(name)) {
             setNameError(true);
             setNameHelperTxt(translations.contactForm.name.errorMessage);
         }
@@ -49,16 +50,28 @@ export default function ContactForm({ translations }) {
         }
 
         if (email !== "" && emailRegex.test(email) && message !== "") {
+            setLoading(true);
+
             let templateParams = {
                 from_name: name, 
                 message: message
             }
+
             emailjs.send(
                 process.env.REACT_APP_EMAILJS_SERVICE_ID,
                 process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
                 templateParams,
                 process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-            );
+            ).then(() => {
+                setLoading(false);
+                setEmail("");
+                setName("");
+                setMessage("");
+                toast.success(translations.contactForm.toastMessage.success);
+            }).catch(() => {
+                setLoading(false);
+                toast.error(translations.contactForm.toastMessage.error);
+            });
         }
     }
 
