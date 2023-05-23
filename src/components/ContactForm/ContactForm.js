@@ -54,6 +54,7 @@ export default function ContactForm({ translations }) {
 
             let templateParams = {
                 from_name: name, 
+                email: email,
                 message: message
             }
 
