@@ -22,6 +22,9 @@
     "stack": {
         "title": "Ma stack"
     },
+    "map": {
+        "title": "Ma localisation"
+    },
     "timeline": {
         "title": "Mon parcours",
         "item1": "Développeur web en alternance, Mecatechnic SAS (Sep 2022-Nov 2023)",
