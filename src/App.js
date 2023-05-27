@@ -89,7 +89,15 @@ function App() {
           </Grid>
           <Grid container gap={{xs: 2, lg: 0}}>
             {/* Bio section */}
-            <Grid item id="bio" gap={3} lg={6} xl={4} padding={{lg: 5}} sx={{backgroundColor: {xs: "none", lg: swapColor === "dark" ? "#121212" : "#F6F6F6"}, borderRadius: {xs: 0, lg: 5}}}>
+            <Grid 
+              item 
+              id="bio" 
+              gap={3} 
+              lg={6} 
+              xl={4} 
+              padding={{lg: 5}} 
+              sx={{backgroundColor: {xs: "none", lg: swapColor === "dark" ? "#121212" : "#F7F0BA"}, borderRadius: {xs: 0, lg: 5}}}
+            >
               <Grid item xs={12} display="flex" justifyContent="space-between" alignItems={{xs: "center", lg:"flex-start"}}>
                 <Typography variant="h5" fontWeight="bold">
                   {translations.bio.title}
@@ -153,7 +161,19 @@ function App() {
               <CareerPath translations={translations} />
             </Grid>
             {/* Contact form */}
-            <Grid container lg={6} gap={2} xl={4}>
+            <Grid 
+              container 
+              lg={6} 
+              gap={2} 
+              xl={4}               
+              sx={{
+                padding: 5,
+                backgroundColor: {
+                  xs: "none", 
+                  lg: swapColor === "dark" ? "#121212" : "#BEB0D8"}, borderRadius: {xs: 0, lg: 5}
+                }
+              }
+            >
               <Grid item xs={12}>
                   <Typography variant="h5" fontWeight="bold">
                     {translations.contactForm.title}
