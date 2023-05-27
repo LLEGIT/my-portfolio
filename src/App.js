@@ -167,12 +167,19 @@ function App() {
               gap={2} 
               xl={4}               
               sx={{
-                padding: 5,
+                padding: {
+                  xs: 0,
+                  lg: 0
+                },
                 backgroundColor: {
                   xs: "none", 
-                  lg: swapColor === "dark" ? "#121212" : "#BEB0D8"}, borderRadius: {xs: 0, lg: 5}
+                  lg: swapColor === "dark" ? "#121212" : "#BEB0D8"
+                }, 
+                borderRadius: {
+                  xs: 0, 
+                  lg: 5
                 }
-              }
+              }}
             >
               <Grid item xs={12}>
                   <Typography variant="h5" fontWeight="bold">
