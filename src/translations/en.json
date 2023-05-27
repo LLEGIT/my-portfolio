@@ -22,6 +22,9 @@
     "stack": {
         "title": "My stack"
     },
+    "map": {
+        "title": "Where am I ?"
+    },
     "timeline": {
         "title": "My career path",
         "item1": "Web Developer Apprentice, Mecatechnic SAS (Sep 2022-Nov 2023)",

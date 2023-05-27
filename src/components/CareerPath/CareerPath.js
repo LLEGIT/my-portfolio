@@ -24,9 +24,9 @@ export default function CareerPath({translations}) {
                     <TimelineDot color={colors[key]}>
                         {item[1]}
                     </TimelineDot>
-                    <TimelineConnector />
+                    {key !== 3 && <TimelineConnector />}
                 </TimelineSeparator>
-                <TimelineContent>{item[0]}</TimelineContent>
+                <TimelineContent alignSelf="center">{item[0]}</TimelineContent>
             </TimelineItem>)}
         </Timeline>
     )
