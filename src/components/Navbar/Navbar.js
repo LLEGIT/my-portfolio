@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Link, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Divider, IconButton, Link, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import { Brightness2, Flag, GitHub, LightMode, LinkedIn, Mail } from "@mui/icons-material";
@@ -47,9 +47,17 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
         setChosenTheme(chosenTheme === "dark" ? "light" : "dark");
     }
 
+    const handleDesktopLink = (link, key) => {
+        let anchorHtml = document.createElement('a');
+        anchorHtml.href = link;
+        anchorHtml.target = key === 2 ? "_self" : "_blank";
+        console.log(key)
+        anchorHtml.click();
+    }
+
     return (
         <Box flexGrow={1}>
-            <AppBar position="fixed" color="secondary">
+            <AppBar position="fixed" color="primary">
                 <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
                     <IconButton
                         id="menu-btn-1"
@@ -84,6 +92,16 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
                     <Typography display={{xs: "none", lg: "block"}}  variant="h6" component="div" flexGrow={1}>
                         { translations.navbar.title }
                     </Typography>
+                    {desktopLinks.map((link, key) => (
+                        <IconButton
+                            sx={{display: {xs: "none", lg: "flex"}}}
+                            color="inherit"
+                            key={key} 
+                            onClick={() => handleDesktopLink(link[0], key)}
+                        >
+                            {link[1]}
+                        </IconButton>
+                    ))}
                     <IconButton
                         onClick={handleTheme}
                         aria-label="change display theme"
