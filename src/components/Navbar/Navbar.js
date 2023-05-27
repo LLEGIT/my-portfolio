@@ -51,7 +51,6 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
         let anchorHtml = document.createElement('a');
         anchorHtml.href = link;
         anchorHtml.target = key === 2 ? "_self" : "_blank";
-        console.log(key)
         anchorHtml.click();
     }
 
