@@ -69,7 +69,7 @@ function App() {
             enTranslations={enTranslations}
           />
         </Grid>
-        <Grid id="bio" container padding={{xs: 5, lg: 0}} gap={3}>
+        <Grid id="bio" container padding={{xs: 5, lg: 10}} gap={3}>
           {/* Mobile links */}
           <Grid item xs={12} justifyContent="space-around" sx={{display: {xs: "flex", lg: "none"}}}>
             {mobileLinks.map((link, key) => <Link color="inherit" key={key} target={key === 2 ? "_self" : "_blank"} underline="none" href={link[0]}>
@@ -123,23 +123,25 @@ function App() {
               </Grid>)}
             </Grid>
           </Grid>
-          {/* Timeline */}
-          <Grid id="timeline" container>
-            <Grid item xs={12}>
-              <Typography variant="h5" fontWeight="bold">
-                {translations.timeline.title}
-              </Typography>
-            </Grid>
-            <CareerPath translations={translations} />
-          </Grid>
-          {/* Contact form */}
-          <Grid container gap={2}>
-            <Grid item xs={12}>
+          <Grid container>
+            {/* Timeline */}
+            <Grid id="timeline" container lg={6}>
+              <Grid item xs={12}>
                 <Typography variant="h5" fontWeight="bold">
-                  {translations.contactForm.title}
+                  {translations.timeline.title}
                 </Typography>
+              </Grid>
+              <CareerPath translations={translations} />
             </Grid>
-            <ContactForm translations={translations} />
+            {/* Contact form */}
+            <Grid container lg={6} gap={2}>
+              <Grid item xs={12}>
+                  <Typography variant="h5" fontWeight="bold">
+                    {translations.contactForm.title}
+                  </Typography>
+              </Grid>
+              <ContactForm translations={translations} />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
