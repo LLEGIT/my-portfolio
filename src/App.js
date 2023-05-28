@@ -169,11 +169,11 @@ function App() {
               sx={{
                 padding: {
                   xs: 0,
-                  lg: 0
+                  lg: 5
                 },
                 backgroundColor: {
                   xs: "none", 
-                  lg: swapColor === "dark" ? "#121212" : "#BEB0D8"
+                  lg: swapColor === "dark" ? "#121212" : "#CBC3E3"
                 }, 
                 borderRadius: {
                   xs: 0, 
