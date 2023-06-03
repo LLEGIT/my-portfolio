@@ -56,7 +56,7 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
 
     return (
         <Box flexGrow={1}>
-            <AppBar position="fixed" color="secondary">
+            <AppBar position="fixed" color="warning">
                 <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
                     <IconButton
                         id="menu-btn-1"
