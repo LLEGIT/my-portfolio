@@ -3,8 +3,10 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 export default function Map() {
     const mapStyles = {
-    height: "450px",
+    height: "90%",
     width: "100%",
+    minHeight: 400,
+    minWidth: "100%"
   };
 
   const defaultCenter = {

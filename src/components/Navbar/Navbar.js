@@ -1,4 +1,4 @@
-import { AppBar, Box, Divider, IconButton, Link, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, IconButton, Link, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import { Brightness2, Flag, GitHub, LightMode, LinkedIn, Mail } from "@mui/icons-material";
@@ -56,7 +56,7 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
 
     return (
         <Box flexGrow={1}>
-            <AppBar position="fixed" color="warning">
+            <AppBar position="fixed" color="inherit">
                 <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
                     <IconButton
                         id="menu-btn-1"
