@@ -22,6 +22,7 @@ import ContactForm from './components/ContactForm/ContactForm';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Map from './components/Map/Map';
+import Projects from './components/Projects/Projects';
 
 function App() {
   const lightTheme = createTheme({
@@ -129,7 +130,8 @@ function App() {
             {/* Stack section */}
             <Grid 
               id="stack" 
-              item display="flex" 
+              item 
+              display="flex" 
               flexDirection="column"
               gap={3} 
               lg={6} 
@@ -175,13 +177,13 @@ function App() {
             <Grid 
               id="map"
               display="flex"
-              justifyContent="column"
+              flexDirection="column"
               borderRadius={5}
               border={{lg: swapColor === "dark" ? "3px dotted white" : "3px dotted black"}}
-              container 
+              item
               xs={12} 
               xl={4}
-              gap={{xs: 2, lg: 2, xl: 0}}
+              gap={{xs: 2, lg: 2}}
               padding={{lg: 5}}
             >
                 <Typography variant="h5" fontWeight="bold">
@@ -190,19 +192,27 @@ function App() {
                 <Map />
             </Grid>
           </Grid>
-          <Grid container display="flex" justifyContent="center" alignItems="center">
+          <Grid container gap={{xs: 5, lg: 0}}>
+            {/* Projects */}
+            <Projects translations={translations} />
             {/* Timeline */}
-            <Grid id="timeline" container lg={6}>
-              <Grid item xs={12}>
-                <Typography variant="h5" fontWeight="bold">
-                  {translations.timeline.title}
-                </Typography>
-              </Grid>
+            <Grid 
+              id="timeline" 
+              item 
+              lg={6} 
+              xl={4}
+              padding={{lg: 5}} 
+            >
+              <Typography variant="h5" fontWeight="bold">
+                {translations.timeline.title}
+              </Typography>
               <CareerPath translations={translations} />
             </Grid>
             {/* Contact form */}
             <Grid 
-              container 
+              item
+              display="flex"
+              flexDirection="column"
               lg={6} 
               gap={2} 
               xl={4}               
@@ -221,11 +231,9 @@ function App() {
                 }
               }}
             >
-              <Grid item xs={12}>
-                  <Typography variant="h5" fontWeight="bold">
-                    {translations.contactForm.title}
-                  </Typography>
-              </Grid>
+              <Typography variant="h5" fontWeight="bold">
+                {translations.contactForm.title}
+              </Typography>
               <ContactForm translations={translations} />
             </Grid>
           </Grid>

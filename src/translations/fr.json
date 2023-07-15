@@ -20,10 +20,16 @@
           ]          
     },
     "stack": {
-        "title": "Mes stacks"
+        "title": "Mes technos"
     },
     "map": {
         "title": "Ma localisation"
+    },
+    "projects": {
+        "title": "Mes projets",
+        "projectOneDescription": "Fake Spotify est une application React cherchant à reproduire le fonctionnement de la célèbre application de streaming musical.",
+        "projectTwoDescription": "Stravabien est une application React Native se servant de l'API Strava et ajoutant des fonctionnalités supplémentaires.",
+        "projectThreeDescription": "Crud PHP permettant de gérer des films et leurs diffusions en tant que gérant d'un cinéma."
     },
     "timeline": {
         "title": "Mon parcours",

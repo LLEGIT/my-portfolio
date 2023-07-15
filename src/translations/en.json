@@ -20,10 +20,16 @@
         ]
     },
     "stack": {
-        "title": "My stacks"
+        "title": "My languages/libraries"
     },
     "map": {
         "title": "Where am I ?"
+    },
+    "projects": {
+        "title": "My projects",
+        "projectOneDescription": "Test",
+        "projectTwoDescription": "Test",
+        "projectThreeDescription": "Test"
     },
     "timeline": {
         "title": "My career path",
