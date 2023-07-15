@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import { useEffect, useState } from 'react';
 import frTranslations from "./translations/fr.json";
 import enTranslations from "./translations/en.json";
-import { GitHub, LinkedIn, Mail } from '@mui/icons-material';
+import { Code, GitHub, LinkedIn, Mail } from '@mui/icons-material';
 import AvatarPic from "./assets/images/avatar.png";
 import HtmlCssJsLogo from "./assets/images/html_css_js.png";
 import MongoDbLogo from "./assets/images/mongodb.png";
@@ -22,6 +22,7 @@ import ContactForm from './components/ContactForm/ContactForm';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Map from './components/Map/Map';
+import Projects from './components/Projects/Projects';
 
 function App() {
   const lightTheme = createTheme({
@@ -70,7 +71,7 @@ function App() {
   return (
     <ThemeProvider theme={chosenTheme}>
       <CssBaseline />
-      <Grid container>
+      <Grid container sx={{backgroundColor: swapColor === "dark" ? "black" : "#F1F1F1"}}>
         <ToastContainer />
         <Grid item xs={12} marginBottom={5}>
           <Navbar 
@@ -87,18 +88,27 @@ function App() {
               {link[1]}
             </Link>)}
           </Grid>
-          <Grid container gap={{xs: 2, lg: 0}}>
+          <Grid container gap={{xs: 5, lg: 0}}>
             {/* Bio section */}
             <Grid 
               item 
               id="bio" 
-              gap={3} 
+              gap={2} 
               lg={6} 
-              xl={4} 
+              xl={4}
               padding={{lg: 5}} 
-              sx={{backgroundColor: {xs: "none", lg: swapColor === "dark" ? "#121212" : "#F7F0BA"}, borderRadius: {xs: 0, lg: 5}}}
             >
-              <Grid item xs={12} display="flex" justifyContent="space-between" alignItems={{xs: "center", lg:"flex-start"}}>
+              <Grid 
+                sx={{backgroundColor: "#ADADC9"}}
+                borderRadius={15}
+                marginBottom={2} 
+                item 
+                xs={12}
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                padding={2}
+              >
                 <Typography variant="h5" fontWeight="bold">
                   {translations.bio.title}
                 </Typography>
@@ -118,14 +128,35 @@ function App() {
               </Grid>
             </Grid>
             {/* Stack section */}
-            <Grid id="stack" item gap={3} lg={6} xl={4} padding={{lg: 5}}>
-              <Typography variant="h5" fontWeight="bold">
+            <Grid 
+              id="stack" 
+              item 
+              display="flex" 
+              flexDirection="column"
+              gap={3} 
+              lg={6} 
+              xl={4}
+              padding={{lg: 5}} 
+            >
+              <Typography 
+                variant="h5"
+                fontWeight="bold"
+                display="flex"
+                alignItems="center"
+                gap={2}
+              >
                 {translations.stack.title}
+                <Code fontSize="large" />
               </Typography>
               <Grid container gap={2}>
                 {stacks.map((stack, parentKey) => <Grid container gap={1} key={parentKey}>
-                  <Grid item xs={12}>
-                    <Typography variant="body1" fontStyle="italic">
+                  <Grid 
+                    item 
+                    xs={12} 
+                    sx={{backgroundColor: "#ADADC9"}}
+                    padding={1}
+                  >
+                    <Typography textAlign="center" variant="body1">
                       {stack[0]}
                     </Typography>
                   </Grid>
@@ -143,26 +174,45 @@ function App() {
                 </Grid>)}
               </Grid>
             </Grid>
-            <Grid id="map" container xs={12} xl={4} gap={3} paddingTop={5}>
+            <Grid 
+              id="map"
+              display="flex"
+              flexDirection="column"
+              borderRadius={5}
+              border={{lg: swapColor === "dark" ? "3px dotted white" : "3px dotted black"}}
+              item
+              xs={12} 
+              xl={4}
+              gap={{xs: 2, lg: 2}}
+              padding={{lg: 5}}
+            >
                 <Typography variant="h5" fontWeight="bold">
                   {translations.map.title}
                 </Typography>
                 <Map />
             </Grid>
           </Grid>
-          <Grid container display="flex" justifyContent="center" alignItems="center">
+          <Grid container gap={{xs: 5, lg: 0}}>
+            {/* Projects */}
+            <Projects translations={translations} />
             {/* Timeline */}
-            <Grid id="timeline" container lg={6}>
-              <Grid item xs={12}>
-                <Typography variant="h5" fontWeight="bold">
-                  {translations.timeline.title}
-                </Typography>
-              </Grid>
+            <Grid 
+              id="timeline" 
+              item 
+              lg={6} 
+              xl={4}
+              padding={{lg: 5}} 
+            >
+              <Typography variant="h5" fontWeight="bold">
+                {translations.timeline.title}
+              </Typography>
               <CareerPath translations={translations} />
             </Grid>
             {/* Contact form */}
             <Grid 
-              container 
+              item
+              display="flex"
+              flexDirection="column"
               lg={6} 
               gap={2} 
               xl={4}               
@@ -173,7 +223,7 @@ function App() {
                 },
                 backgroundColor: {
                   xs: "none", 
-                  lg: swapColor === "dark" ? "#121212" : "#CBC3E3"
+                  lg: swapColor === "dark" ? "#234F1E" : "#CFFDBC"
                 }, 
                 borderRadius: {
                   xs: 0, 
@@ -181,11 +231,9 @@ function App() {
                 }
               }}
             >
-              <Grid item xs={12}>
-                  <Typography variant="h5" fontWeight="bold">
-                    {translations.contactForm.title}
-                  </Typography>
-              </Grid>
+              <Typography variant="h5" fontWeight="bold">
+                {translations.contactForm.title}
+              </Typography>
               <ContactForm translations={translations} />
             </Grid>
           </Grid>

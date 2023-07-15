@@ -20,10 +20,16 @@
         ]
     },
     "stack": {
-        "title": "My stack"
+        "title": "My languages/libraries"
     },
     "map": {
         "title": "Where am I ?"
+    },
+    "projects": {
+        "title": "My Projects",
+        "projectOneDescription": "Fake Spotify is a React application aiming to replicate the functionality of the popular music streaming application.",
+        "projectTwoDescription": "Stravabien is a React Native application that utilizes the Strava API and adds additional features.",
+        "projectThreeDescription": "PHP CRUD application for managing movies and their showtimes as a cinema manager."
     },
     "timeline": {
         "title": "My career path",
