@@ -50,7 +50,7 @@ export default function Projects({ translations }) {
                 gap={3}
             >
                 <Box 
-                    maxWidth="75%"
+                    maxWidth={{xs: "75%", lg: "65%"}}
                     display="flex"
                     flexDirection="column"
                     gap={2}
@@ -59,7 +59,7 @@ export default function Projects({ translations }) {
                     <Typography textAlign="justify">{project.description}</Typography>
                 </Box>
                 <CardMedia
-                    sx={{ height: { xs: 35, lg: 125 }, width: { xs: 35, lg: 125 } }}
+                    sx={{ height: { xs: 35, lg: 115 }, width: { xs: 35, lg: 115 } }}
                     title="Project image"
                     image={project.image}
                 />
