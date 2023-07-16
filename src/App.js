@@ -156,7 +156,7 @@ function App() {
                     sx={{backgroundColor: "#EFCC00"}}
                     padding={1}
                   >
-                    <Typography textAlign="center" variant="body1">
+                    <Typography textAlign="center" variant="body1" color="black">
                       {stack[0]}
                     </Typography>
                   </Grid>
