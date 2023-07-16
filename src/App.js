@@ -153,7 +153,7 @@ function App() {
                   <Grid 
                     item 
                     xs={12} 
-                    sx={{backgroundColor: "#ADADC9"}}
+                    sx={{backgroundColor: "#EFCC00"}}
                     padding={1}
                   >
                     <Typography textAlign="center" variant="body1">
@@ -213,6 +213,7 @@ function App() {
               item
               display="flex"
               flexDirection="column"
+              maxHeight={500}
               lg={6} 
               gap={2} 
               xl={4}               
