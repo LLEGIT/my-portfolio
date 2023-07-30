@@ -16,10 +16,10 @@ export default function Projects({ translations }) {
             link: "https://github.com/LLEGIT/Stravabien"
         },
         {
-            name: "Cinema manager",
-            image: "https://www.pngplay.com/wp-content/uploads/6/Cinema-Logo-PNG-Clipart-Background.png",
+            name: "Star Wars Wiki",
+            image: "https://www.1min30.com/wp-content/uploads/2017/09/logo-empire-star-wars-1.jpg",
             description: translations.projects.projectThreeDescription,
-            link: "https://github.com/LLEGIT/cinema_manager"
+            link: "https://github.com/LLEGIT/star_wars_wiki"
         }
     ];
 
