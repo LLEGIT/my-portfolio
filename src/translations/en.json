@@ -46,7 +46,7 @@
             "emptyMessage": "Please fill in this field"
         },
         "email": {
-            "label": "Email Address",
+            "label": "Your email address",
             "errorMessage": "Invalid format (e.g., test@gmail.com)",
             "emptyMessage": "Please fill in this field"
         },
@@ -60,7 +60,11 @@
         "toastMessage": {
             "success": "Your message has been sent successfully! I will process it as soon as possible.",
             "error": "Unable to send the message, please try again later."
-        }
-        
+        }        
+    },
+    "footer": {
+        "info1": "theogillet.developpment@mail.com",
+        "info2": "France",
+        "info3": "Car, bike, public transports"
     }
 }

@@ -46,7 +46,7 @@
             "emptyMessage": "Veuillez remplir ce champ"
         },        
         "email": {
-            "label": "Adresse mail",
+            "label": "Votre adresse mail",
             "errorMessage": "Format invalide (ex: test@gmail.com)",
             "emptyMessage": "Veuillez remplir ce champ"
         },
@@ -61,5 +61,10 @@
             "success": "Votre message a bien été envoyé ! Je le traiterai dans les meilleurs délais",
             "error": "Impossible d'envoyer le message, veuillez réessayer ultérieurement."
         }
+    },
+    "footer": {
+        "info1": "theogillet.developpment@mail.com",
+        "info2": "France",
+        "info3": "Voiture, velo, transports en commun"
     }
 }
