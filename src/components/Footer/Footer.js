@@ -43,7 +43,8 @@ export default function Footer({ translations }) {
         boxShadow:
           "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
       }}
-      padding={7}
+      padding={5}
+      gap={{xs: 3, lg: 0}}
     >
       {footerInfos.map((info, index) => (
         <Grid
@@ -52,8 +53,8 @@ export default function Footer({ translations }) {
           xs={12}
           lg={3}
           display="flex"
+          justifyContent={{lg: "center"}}
           alignItems="center"
-          justifyContent="center"
           gap={2}
         >
           {info.icon}
