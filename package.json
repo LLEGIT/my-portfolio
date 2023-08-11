@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-react",
+  "name": "my-portfolio",
   "version": "0.1.0",
-  "homepage": "https://llegit.github.io/portfolio-react",
+  "homepage": "https://llegit.github.io/my-portfolio",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
