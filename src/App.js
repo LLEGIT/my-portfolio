@@ -32,6 +32,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Map from "./components/Map/Map";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
+import backgroundImage from "./assets/images/background.png";
 
 function App() {
   const lightTheme = createTheme({
@@ -87,6 +88,18 @@ function App() {
   return (
     <ThemeProvider theme={chosenTheme}>
       <CssBaseline />
+      <img
+        className="background"
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          left: 0,
+          top: 0,
+          zIndex: 12
+        }}
+        src={backgroundImage}
+      />
       <Grid
         container
         sx={{ backgroundColor: swapColor === "dark" ? "black" : "#F1F1F1" }}
