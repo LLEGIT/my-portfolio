@@ -320,7 +320,7 @@ function App() {
               <Box
                 sx={{
                   padding: {xs: 2, lg: 3},
-                  backgroundColor: swapColor === "dark" ? "#234F1E" : "#f2f2f2",
+                  backgroundColor: swapColor === "dark" ? "black" : "#f2f2f2",
                 }}
                 borderRadius={5}
               >
