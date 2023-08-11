@@ -148,7 +148,7 @@ function App() {
                   alignItems="center"
                   padding={2}
                 >
-                  <Typography variant="h5" fontWeight="bold">
+                  <Typography variant="h5" fontWeight="bold" color="black">
                     {translations.bio.title}
                   </Typography>
                   <Avatar
