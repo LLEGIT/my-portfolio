@@ -33,7 +33,7 @@ export default function Projects({ translations }) {
         xl={4}
         padding={{ lg: 5 }}
     >
-        <Typography variant="h5" fontWeight="bold">
+        <Typography variant="h5" color="white" fontWeight="bold">
             {translations.projects.title}
         </Typography>
         {projectsArray.map((project, key) => <Card

@@ -88,19 +88,8 @@ function App() {
   return (
     <ThemeProvider theme={chosenTheme}>
       <CssBaseline />
-      <img
-        className="background"
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          left: 0,
-          top: 0,
-          zIndex: 12
-        }}
-        src={backgroundImage}
-      />
       <Grid
+        className="main-container"
         container
         sx={{ backgroundColor: swapColor === "dark" ? "black" : "#F1F1F1" }}
       >
@@ -113,7 +102,7 @@ function App() {
             enTranslations={enTranslations}
           />
         </Grid>
-        <Grid container padding={{ xs: 5, lg: 10 }} gap={5}>
+        <Grid container padding={{ xs: 5, lg: 10 }}>
           {/* Mobile links */}
           <Grid
             item
@@ -133,45 +122,55 @@ function App() {
               </Link>
             ))}
           </Grid>
-          <Grid container gap={{ xs: 5, lg: 0 }}>
+          <Grid container display="flex" alignItems="center">
             {/* Bio section */}
-            <Grid item id="bio" gap={2} lg={6} xl={4} padding={{ lg: 5 }}>
-              <Grid
-                sx={{ backgroundColor: "#ADADC9" }}
-                borderRadius={15}
-                marginBottom={2}
-                item
-                xs={12}
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                padding={2}
+            <Grid
+              item
+              id="bio"
+              lg={6}
+              xl={4}
+              padding={2}
+            >
+              <Box
+               gap={2}
+               sx={{ backgroundColor: swapColor === "dark" ? "black" : "white" }}
+               padding={3}
               >
-                <Typography variant="h5" fontWeight="bold">
-                  {translations.bio.title}
-                </Typography>
-                <Avatar
-                  alt="Picture of myself"
-                  src={AvatarPic}
-                  sx={{
-                    width: 70,
-                    height: 70,
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                {translations.bio.content.map((line, key) => (
-                  <Typography
-                    paddingTop={1}
-                    paddingBottom={1}
-                    textAlign="justify"
-                    variant="body1"
-                    key={key}
-                  >
-                    {line}
+                <Box
+                  sx={{ backgroundColor: "#ADADC9" }}
+                  borderRadius={15}
+                  marginBottom={2}
+                  display="flex"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  padding={2}
+                >
+                  <Typography variant="h5" fontWeight="bold">
+                    {translations.bio.title}
                   </Typography>
-                ))}
-              </Grid>
+                  <Avatar
+                    alt="Picture of myself"
+                    src={AvatarPic}
+                    sx={{
+                      width: 70,
+                      height: 70,
+                    }}
+                  />
+                </Box>
+                <Box>
+                  {translations.bio.content.map((line, key) => (
+                    <Typography
+                      paddingTop={1}
+                      paddingBottom={1}
+                      textAlign="justify"
+                      variant="body1"
+                      key={key}
+                    >
+                      {line}
+                    </Typography>
+                  ))}
+                </Box>
+              </Box>
             </Grid>
             {/* Stack section */}
             <Grid
@@ -179,68 +178,73 @@ function App() {
               item
               display="flex"
               flexDirection="column"
-              gap={3}
               lg={6}
               xl={4}
-              padding={{ lg: 5 }}
+              padding={{ lg: 2 }}
             >
-              <Typography
-                variant="h5"
-                fontWeight="bold"
-                display="flex"
-                alignItems="center"
-                gap={2}
+              <Box
+                gap={3}
+                sx={{ backgroundColor: swapColor === "dark" ? "black" : "white" }}
+                padding={{lg: 3}}
               >
-                {translations.stack.title}
-                <Code fontSize="large" />
-              </Typography>
-              <Grid container gap={2}>
-                {stacks.map((stack, parentKey) => (
-                  <Grid container gap={1} key={parentKey}>
-                    <Grid
-                      item
-                      xs={12}
-                      sx={{ backgroundColor: "#EFCC00" }}
-                      padding={1}
-                    >
-                      <Typography
-                        textAlign="center"
-                        variant="body1"
-                        color="black"
+                <Typography
+                  variant="h5"
+                  fontWeight="bold"
+                  display="flex"
+                  alignItems="center"
+                  marginBottom={1}
+                  gap={2}
+                >
+                  {translations.stack.title}
+                  <Code fontSize="large" />
+                </Typography>
+                <Box>
+                  {stacks.map((stack, parentKey) => (
+                    <Grid container gap={1} key={parentKey}>
+                      <Grid
+                        item
+                        xs={12}
+                        sx={{ backgroundColor: "#EFCC00" }}
+                        padding={1}
                       >
-                        {stack[0]}
-                      </Typography>
-                    </Grid>
-                    <Grid
-                      item
-                      xs={12}
-                      display="flex"
-                      justifyContent="space-around"
-                      alignItems="center"
-                    >
-                      {stack[1].map((image, childKey) => (
-                        <Box
-                          sx={{
-                            width: {
-                              xs: parentKey === 0 ? 280 : 75,
-                              lg: parentKey === 0 ? 300 : 75,
-                            },
-                          }}
-                          key={childKey}
+                        <Typography
+                          textAlign="center"
+                          variant="body1"
+                          color="black"
                         >
-                          <img
-                            src={image}
-                            alt="technology logos"
-                            loading="lazy"
-                            width="100%"
-                            height="auto"
-                          />
-                        </Box>
-                      ))}
+                          {stack[0]}
+                        </Typography>
+                      </Grid>
+                      <Box
+                        width="100%"
+                        display="flex"
+                        justifyContent="space-around"
+                        alignItems="center"
+                      >
+                        {stack[1].map((image, childKey) => (
+                          <Box
+                            sx={{
+                              width: {
+                                xs: parentKey === 0 ? 280 : 75,
+                                lg: parentKey === 0 ? 300 : 75,
+                              },
+                            }}
+                            key={childKey}
+                          >
+                            <img
+                              src={image}
+                              alt="technology logos"
+                              loading="lazy"
+                              width="100%"
+                              height="auto"
+                            />
+                          </Box>
+                        ))}
+                      </Box>
                     </Grid>
-                  </Grid>
-                ))}
-              </Grid>
+                  ))}
+                </Box>
+              </Box>
             </Grid>
             <Grid
               id="map"
@@ -250,26 +254,32 @@ function App() {
               border={{
                 lg:
                   swapColor === "dark"
-                    ? "3px dotted white"
-                    : "3px dotted black",
+                    ? "2px dotted white"
+                    : "2px dotted black",
               }}
               item
               xs={12}
+              lg={6}
               xl={4}
-              gap={{ xs: 2, lg: 2 }}
-              padding={{ lg: 5 }}
+              padding={{ lg: 2 }}
             >
-              <Typography variant="h5" fontWeight="bold">
-                {translations.map.title}
-              </Typography>
-              <Map />
+              <Box
+               gap={{ xs: 2}}
+               padding={{ lg: 3 }}
+               sx={{ backgroundColor: swapColor === "dark" ? "black" : "white" }}
+              >
+                <Typography variant="h5" fontWeight="bold">
+                  {translations.map.title}
+                </Typography>
+                <Map />
+              </Box>
             </Grid>
           </Grid>
           <Grid container gap={{ xs: 5, lg: 0 }}>
             {/* Projects */}
             <Projects translations={translations} />
             {/* Timeline */}
-            <Grid id="timeline" item lg={6} xl={4} padding={{ lg: 5 }}>
+            <Grid id="timeline" color="white" item lg={6} xl={4} padding={{ lg: 5 }}>
               <Typography variant="h5" fontWeight="bold">
                 {translations.timeline.title}
               </Typography>
@@ -306,7 +316,7 @@ function App() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ backgroundColor: "inherit" }}>
           <Footer translations={translations} />
         </Grid>
       </Grid>
