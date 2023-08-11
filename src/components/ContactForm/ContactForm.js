@@ -111,7 +111,7 @@ export default function ContactForm({ translations }) {
         </Grid>
         <Grid item xs={12} display="flex" justifyContent="flex-end">
             <LoadingButton
-                color="success"
+                color="info"
                 variant="contained"
                 loading={loading}
                 onClick={handleSubmit}

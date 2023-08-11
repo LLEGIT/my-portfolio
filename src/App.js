@@ -3,6 +3,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import {
   Avatar,
   Box,
+  Chip,
   Grid,
   Link,
   ThemeProvider,
@@ -13,7 +14,14 @@ import Navbar from "./components/Navbar/Navbar";
 import { useEffect, useState } from "react";
 import frTranslations from "./translations/fr.json";
 import enTranslations from "./translations/en.json";
-import { Code, GitHub, LinkedIn, Mail } from "@mui/icons-material";
+import {
+  Code,
+  ContactMail,
+  GitHub,
+  LinkedIn,
+  Mail,
+  MapOutlined,
+} from "@mui/icons-material";
 import AvatarPic from "./assets/images/avatar.png";
 import HtmlCssJsLogo from "./assets/images/html_css_js.png";
 import MongoDbLogo from "./assets/images/mongodb.png";
@@ -32,7 +40,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Map from "./components/Map/Map";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
-import backgroundImage from "./assets/images/background.png";
 
 function App() {
   const lightTheme = createTheme({
@@ -102,7 +109,7 @@ function App() {
             enTranslations={enTranslations}
           />
         </Grid>
-        <Grid container padding={{ xs: 5, lg: 10 }}>
+        <Grid container marginTop={{ xs: 5, lg: 0 }} padding={{ lg: 10 }}>
           {/* Mobile links */}
           <Grid
             item
@@ -124,20 +131,16 @@ function App() {
           </Grid>
           <Grid container display="flex" alignItems="center">
             {/* Bio section */}
-            <Grid
-              item
-              id="bio"
-              lg={6}
-              xl={4}
-              padding={2}
-            >
+            <Grid item id="bio" lg={6} xl={4} padding={2}>
               <Box
-               gap={2}
-               sx={{ backgroundColor: swapColor === "dark" ? "black" : "white" }}
-               padding={3}
+                gap={2}
+                sx={{
+                  backgroundColor: swapColor === "dark" ? "black" : "white",
+                }}
+                padding={3}
               >
                 <Box
-                  sx={{ backgroundColor: "#ADADC9" }}
+                  sx={{ backgroundColor: "#f1f1f1" }}
                   borderRadius={15}
                   marginBottom={2}
                   display="flex"
@@ -180,12 +183,14 @@ function App() {
               flexDirection="column"
               lg={6}
               xl={4}
-              padding={{ lg: 2 }}
+              padding={2}
             >
               <Box
                 gap={3}
-                sx={{ backgroundColor: swapColor === "dark" ? "black" : "white" }}
-                padding={{lg: 3}}
+                sx={{
+                  backgroundColor: swapColor === "dark" ? "black" : "white",
+                }}
+                padding={3}
               >
                 <Typography
                   variant="h5"
@@ -193,10 +198,10 @@ function App() {
                   display="flex"
                   alignItems="center"
                   marginBottom={1}
-                  gap={2}
+                  gap={1}
                 >
                   {translations.stack.title}
-                  <Code fontSize="large" />
+                  <Code />
                 </Typography>
                 <Box>
                   {stacks.map((stack, parentKey) => (
@@ -251,25 +256,28 @@ function App() {
               display="flex"
               flexDirection="column"
               borderRadius={5}
-              border={{
-                lg:
-                  swapColor === "dark"
-                    ? "2px dotted white"
-                    : "2px dotted black",
-              }}
               item
               xs={12}
               lg={6}
               xl={4}
-              padding={{ lg: 2 }}
+              padding={2}
             >
               <Box
-               gap={{ xs: 2}}
-               padding={{ lg: 3 }}
-               sx={{ backgroundColor: swapColor === "dark" ? "black" : "white" }}
+                padding={2}
+                sx={{
+                  backgroundColor: swapColor === "dark" ? "black" : "white",
+                }}
               >
-                <Typography variant="h5" fontWeight="bold">
+                <Typography
+                  marginBottom={2}
+                  variant="h5"
+                  fontWeight="bold"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}
+                >
                   {translations.map.title}
+                  <MapOutlined />
                 </Typography>
                 <Map />
               </Box>
@@ -279,11 +287,23 @@ function App() {
             {/* Projects */}
             <Projects translations={translations} />
             {/* Timeline */}
-            <Grid id="timeline" color="white" item lg={6} xl={4} padding={{ lg: 5 }}>
-              <Typography variant="h5" fontWeight="bold">
-                {translations.timeline.title}
-              </Typography>
-              <CareerPath translations={translations} />
+            <Grid id="timeline" item lg={6} xl={4} padding={{ xs: 2, lg: 5 }}>
+              <Chip
+                label={translations.timeline.title}
+                sx={{ fontSize: 25, width: "100%" }}
+                variant="contained"
+                color="primary"
+                size="large"
+              />
+              <Box
+                marginTop={2}
+                padding={1}
+                sx={{
+                  backgroundColor: swapColor === "dark" ? "black" : "white",
+                }}
+              >
+                <CareerPath translations={translations} />
+              </Box>
             </Grid>
             {/* Contact form */}
             <Grid
@@ -294,25 +314,29 @@ function App() {
               lg={6}
               gap={2}
               xl={4}
-              sx={{
-                padding: {
-                  xs: 0,
-                  lg: 5,
-                },
-                backgroundColor: {
-                  xs: "none",
-                  lg: swapColor === "dark" ? "#234F1E" : "#CFFDBC",
-                },
-                borderRadius: {
-                  xs: 0,
-                  lg: 5,
-                },
-              }}
+              marginBottom={{ xs: 5, lg: 0 }}
+              padding={2}
             >
-              <Typography variant="h5" fontWeight="bold">
-                {translations.contactForm.title}
-              </Typography>
-              <ContactForm translations={translations} />
+              <Box
+                sx={{
+                  padding: {xs: 2, lg: 3},
+                  backgroundColor: swapColor === "dark" ? "#234F1E" : "#f2f2f2",
+                }}
+                borderRadius={5}
+              >
+                <Typography
+                  variant="h5"
+                  fontWeight="bold"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}
+                  marginBottom={2}
+                >
+                  {translations.contactForm.title}
+                  <ContactMail />
+                </Typography>
+                <ContactForm translations={translations} />
+              </Box>
             </Grid>
           </Grid>
         </Grid>
