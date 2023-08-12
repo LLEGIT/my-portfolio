@@ -2,7 +2,6 @@ import { Launch } from "@mui/icons-material";
 import {
   Box,
   Card,
-  CardMedia,
   Chip,
   Grid,
   Link,
@@ -79,7 +78,7 @@ export default function Projects({ translations }) {
                 width: { xs: 35, lg: 115 },
               }}
             >
-              <img src={project.image} width="100%" height="auto" />
+              <img src={project.image} alt={project.name + " logo"} width="100%" height="auto" />
             </Box>
           </Box>
           <Link href={project.link} target="_blank">
