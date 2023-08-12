@@ -129,7 +129,7 @@ function App() {
               </Link>
             ))}
           </Grid>
-          <Grid container display="flex" alignItems="center">
+          <Grid container display="flex" alignItems="flex-start">
             {/* Bio section */}
             <Grid item id="bio" lg={6} xl={4} padding={2}>
               <Box
@@ -148,7 +148,7 @@ function App() {
                   alignItems="center"
                   padding={2}
                 >
-                  <Typography variant="h5" fontWeight="bold" color="black">
+                  <Typography variant="h2" fontSize={35} fontWeight="bold" color="black">
                     {translations.bio.title}
                   </Typography>
                   <Avatar
@@ -193,7 +193,8 @@ function App() {
                 padding={3}
               >
                 <Typography
-                  variant="h5"
+                  variant="h2"
+                  fontSize={35}
                   fontWeight="bold"
                   display="flex"
                   alignItems="center"
@@ -201,7 +202,7 @@ function App() {
                   gap={1}
                 >
                   {translations.stack.title}
-                  <Code />
+                  <Code fontSize="large" />
                 </Typography>
                 <Box>
                   {stacks.map((stack, parentKey) => (
@@ -209,7 +210,7 @@ function App() {
                       <Grid
                         item
                         xs={12}
-                        sx={{ backgroundColor: "#EFCC00" }}
+                        sx={{ backgroundColor: "#444cf777" }}
                         padding={1}
                       >
                         <Typography
@@ -290,9 +291,8 @@ function App() {
             <Grid id="timeline" item lg={6} xl={4} padding={{ xs: 2, lg: 5 }}>
               <Chip
                 label={translations.timeline.title}
-                sx={{ fontSize: 25, width: "100%" }}
+                sx={{ fontSize: 25, width: "100%", backgroundColor: "#444cf7" }}
                 variant="contained"
-                color="primary"
                 size="large"
               />
               <Box

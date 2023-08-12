@@ -47,9 +47,8 @@ export default function Projects({ translations }) {
     >
       <Chip
         label={translations.projects.title}
-        sx={{ fontSize: 25 }}
+        sx={{ fontSize: 25, backgroundColor: "#444cf7db" }}
         variant="contained"
-        color="warning"
         size="large"
       />
       {projectsArray.map((project, key) => (
@@ -69,14 +68,19 @@ export default function Projects({ translations }) {
               flexDirection="column"
               gap={2}
             >
-              <Typography fontWeight="bold">{project.name}</Typography>
-              <Typography textAlign="justify">{project.description}</Typography>
+              <Typography variant="h5" fontWeight="bold">
+                {project.name}
+              </Typography>
+              <Typography>{project.description}</Typography>
             </Box>
-            <CardMedia
-              sx={{ height: { xs: 35, lg: 115 }, width: { xs: 35, lg: 115 } }}
-              title="Project image"
-              image={project.image}
-            />
+            <Box
+              sx={{
+                height: { xs: 35, lg: 115 },
+                width: { xs: 35, lg: 115 },
+              }}
+            >
+              <img src={project.image} width="100%" height="auto" />
+            </Box>
           </Box>
           <Link href={project.link} target="_blank">
             <Launch />

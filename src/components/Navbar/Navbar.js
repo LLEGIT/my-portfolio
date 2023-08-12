@@ -88,7 +88,7 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
                             </Link>
                         </MenuItem>)}
                     </Menu>
-                    <Typography display={{xs: "none", lg: "block"}}  variant="h6" component="div" flexGrow={1}>
+                    <Typography display={{xs: "none", lg: "block"}}  variant="h1" fontSize={20} component="div" flexGrow={1}>
                         { translations.navbar.title }
                     </Typography>
                     {desktopLinks.map((link, key) => (
