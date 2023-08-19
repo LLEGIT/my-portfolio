@@ -40,6 +40,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Map from "./components/Map/Map";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
+import Console from "./components/Console/Console";
 
 function App() {
   const lightTheme = createTheme({
@@ -128,6 +129,9 @@ function App() {
                 {link[1]}
               </Link>
             ))}
+          </Grid>
+          <Grid item xs={12}>
+            <Console />
           </Grid>
           <Grid container display="flex" alignItems="flex-start">
             {/* Bio section */}
