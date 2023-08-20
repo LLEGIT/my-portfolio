@@ -130,8 +130,8 @@ function App() {
               </Link>
             ))}
           </Grid>
-          <Grid item xs={12}>
-            <Console />
+          <Grid item xs={12} padding={2}>
+            <Console translations={translations} />
           </Grid>
           <Grid container display="flex" alignItems="flex-start">
             {/* Bio section */}
