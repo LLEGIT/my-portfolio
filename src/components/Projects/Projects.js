@@ -1,12 +1,5 @@
 import { Launch } from "@mui/icons-material";
-import {
-  Box,
-  Card,
-  Chip,
-  Grid,
-  Link,
-  Typography,
-} from "@mui/material";
+import { Box, Card, Chip, Grid, Link, Typography } from "@mui/material";
 
 export default function Projects({ translations }) {
   const projectsArray = [
@@ -16,6 +9,7 @@ export default function Projects({ translations }) {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png",
       description: translations.projects.projectOneDescription,
       link: "https://github.com/LLEGIT/fake_spotify",
+      alt: "Fake Spotify logo",
     },
     {
       name: "Stravabien",
@@ -23,6 +17,7 @@ export default function Projects({ translations }) {
         "https://seeklogo.com/images/S/strava-logo-C419D1A461-seeklogo.com.png",
       description: translations.projects.projectTwoDescription,
       link: "https://github.com/LLEGIT/Stravabien",
+      alt: "Stravabien logo",
     },
     {
       name: "Star Wars Wiki",
@@ -30,6 +25,7 @@ export default function Projects({ translations }) {
         "https://www.1min30.com/wp-content/uploads/2017/09/logo-empire-star-wars-1.jpg",
       description: translations.projects.projectThreeDescription,
       link: "https://github.com/LLEGIT/star_wars_wiki",
+      alt: "Star wars logo",
     },
   ];
 
@@ -46,7 +42,7 @@ export default function Projects({ translations }) {
     >
       <Chip
         label={translations.projects.title}
-        sx={{ fontSize: 25, backgroundColor: "#444cf7db" }}
+        sx={{ fontSize: 25, backgroundColor: "#998756" }}
         variant="contained"
         size="large"
       />
@@ -78,7 +74,12 @@ export default function Projects({ translations }) {
                 width: { xs: 35, lg: 115 },
               }}
             >
-              <img src={project.image} alt={project.name + " logo"} width="100%" height="auto" />
+              <img
+                src={project.image}
+                width="100%"
+                height="auto"
+                alt={project.alt}
+              />
             </Box>
           </Box>
           <Link href={project.link} target="_blank">

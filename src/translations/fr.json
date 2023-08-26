@@ -7,6 +7,9 @@
         "timeline": "Mon parcours",
         "projects": "Mes projets"
     },
+    "console": {
+        "firstMessage": "Bienvenue sur la console du portfolio de Theo Gillet, si vous ne savez pas quoi taper écrivez 'help' :)"
+    },
     "bio": {
         "title": "Qui suis-je ?",
         "content": [
@@ -20,7 +23,7 @@
           ]          
     },
     "stack": {
-        "title": "Mes technos"
+        "title": "Stack technique"
     },
     "map": {
         "title": "Ma localisation"

@@ -40,6 +40,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Map from "./components/Map/Map";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
+import Console from "./components/Console/Console";
 
 function App() {
   const lightTheme = createTheme({
@@ -115,7 +116,10 @@ function App() {
             item
             xs={12}
             justifyContent="space-around"
-            sx={{ display: { xs: "flex", lg: "none" } }}
+            sx={{ display: { xs: "flex", lg: "none" }, backgroundColor: "#d98585", maxHeight: "52px" }}
+            padding={1}
+            margin={2}
+            borderRadius={15}
           >
             {mobileLinks.map((link, key) => (
               <Link
@@ -128,6 +132,9 @@ function App() {
                 {link[1]}
               </Link>
             ))}
+          </Grid>
+          <Grid item xs={12} padding={2}>
+            <Console translations={translations} />
           </Grid>
           <Grid container display="flex" alignItems="flex-start">
             {/* Bio section */}
@@ -148,7 +155,12 @@ function App() {
                   alignItems="center"
                   padding={2}
                 >
-                  <Typography variant="h2" fontSize={35} fontWeight="bold" color="black">
+                  <Typography
+                    variant="h2"
+                    fontSize={31}
+                    fontWeight="bold"
+                    color="black"
+                  >
                     {translations.bio.title}
                   </Typography>
                   <Avatar
@@ -194,7 +206,7 @@ function App() {
               >
                 <Typography
                   variant="h2"
-                  fontSize={35}
+                  fontSize={31}
                   fontWeight="bold"
                   display="flex"
                   alignItems="center"
@@ -291,7 +303,7 @@ function App() {
             <Grid id="timeline" item lg={6} xl={4} padding={{ xs: 2, lg: 5 }}>
               <Chip
                 label={translations.timeline.title}
-                sx={{ fontSize: 25, width: "100%", backgroundColor: "#444cf7" }}
+                sx={{ fontSize: 25, width: "100%", backgroundColor: "#4fab8c" }}
                 variant="contained"
                 size="large"
               />
@@ -319,7 +331,7 @@ function App() {
             >
               <Box
                 sx={{
-                  padding: {xs: 2, lg: 3},
+                  padding: { xs: 2, lg: 3 },
                   backgroundColor: swapColor === "dark" ? "black" : "#f2f2f2",
                 }}
                 borderRadius={5}

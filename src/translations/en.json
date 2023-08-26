@@ -7,6 +7,9 @@
         "timeline": "My career path",
         "projects": "My projects"
     },
+    "console": {
+        "firstMessage": "Welcome to this built in console, have fun with it (if you don't know what to type try 'help') !"
+    },
     "bio": {
         "title": "Who am I ?",
         "content": [
