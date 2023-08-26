@@ -42,7 +42,7 @@ export default function Projects({ translations }) {
     >
       <Chip
         label={translations.projects.title}
-        sx={{ fontSize: 25, backgroundColor: "#444cf7db" }}
+        sx={{ fontSize: 25, backgroundColor: "#998756" }}
         variant="contained"
         size="large"
       />
