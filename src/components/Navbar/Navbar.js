@@ -1,13 +1,14 @@
 import { AppBar, Box, IconButton, Link, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
-import { Brightness2, Flag, GitHub, LightMode, LinkedIn, Mail } from "@mui/icons-material";
+import { Brightness2, ContactPage, Flag, GitHub, LightMode, LinkedIn, Mail } from "@mui/icons-material";
 
 export default function Navbar({ onThemeChange , onLanguageChange, frTranslations, enTranslations}) {
     const [translations, setTranslations] = useState(sessionStorage.getItem("translation") === "en" ? enTranslations : frTranslations);
     const [anchorElOne, setAnchorElOne] = useState(null);
     const [anchorElTwo, setAnchorElTwo] = useState(null);
     const desktopLinks = [
+        ["resume.pdf", <ContactPage />],
         ["https://www.linkedin.com/in/theogillet/", <LinkedIn />],
         ["https://github.com/LLEGIT", <GitHub />],
         ["mailto:theogillet.developpement@gmail.com", <Mail />]
@@ -51,6 +52,13 @@ export default function Navbar({ onThemeChange , onLanguageChange, frTranslation
         let anchorHtml = document.createElement('a');
         anchorHtml.href = link;
         anchorHtml.target = key === 2 ? "_self" : "_blank";
+
+        if (key === 0) {
+            anchorHtml.setAttribute("download", "");
+        }
+
+        console.log(anchorHtml)
+
         anchorHtml.click();
     }
 
