@@ -17,6 +17,7 @@ import enTranslations from "./translations/en.json";
 import {
   Code,
   ContactMail,
+  ContactPage,
   GitHub,
   LinkedIn,
   Mail,
@@ -72,6 +73,7 @@ function App() {
     ["Style", [MuiLogo, BootstrapLogo, SassLogo]],
   ];
   const mobileLinks = [
+    ["resume.pdf", <ContactPage fontSize="large" />],
     ["https://www.linkedin.com/in/theogillet/", <LinkedIn fontSize="large" />],
     ["https://github.com/LLEGIT", <GitHub fontSize="large" />],
     ["mailto:theogillet.developpement@gmail.com", <Mail fontSize="large" />],
@@ -116,22 +118,39 @@ function App() {
             item
             xs={12}
             justifyContent="space-around"
-            sx={{ display: { xs: "flex", lg: "none" }, backgroundColor: "#d98585", maxHeight: "52px" }}
+            sx={{
+              display: { xs: "flex", lg: "none" },
+              backgroundColor: "#d98585",
+              maxHeight: "52px",
+            }}
             padding={1}
             margin={2}
             borderRadius={15}
           >
-            {mobileLinks.map((link, key) => (
-              <Link
-                color="inherit"
-                key={key}
-                target={key === 2 ? "_self" : "_blank"}
-                underline="none"
-                href={link[0]}
-              >
-                {link[1]}
-              </Link>
-            ))}
+            {mobileLinks.map((link, key) =>
+              key === 0 ? (
+                <Link
+                  color="inherit"
+                  key={key}
+                  target="_blank"
+                  underline="none"
+                  href={link[0]}
+                  download
+                >
+                  {link[1]}
+                </Link>
+              ) : (
+                <Link
+                  color="inherit"
+                  key={key}
+                  target={key === 2 ? "_self" : "_blank"}
+                  underline="none"
+                  href={link[0]}
+                >
+                  {link[1]}
+                </Link>
+              )
+            )}
           </Grid>
           <Grid item xs={12} padding={2}>
             <Console translations={translations} />
@@ -303,7 +322,7 @@ function App() {
             <Grid id="timeline" item lg={6} xl={4} padding={{ xs: 2, lg: 5 }}>
               <Chip
                 label={translations.timeline.title}
-                sx={{ fontSize: 25, width: "100%", backgroundColor: "#4fab8c" }}
+                sx={{ fontSize: 25, width: "100%", backgroundColor: "white" }}
                 variant="contained"
                 size="large"
               />
