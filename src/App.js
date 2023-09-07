@@ -317,12 +317,12 @@ function App() {
           </Grid>
           <Grid container gap={{ xs: 5, lg: 0 }}>
             {/* Projects */}
-            <Projects translations={translations} />
+            <Projects swapColor={swapColor} translations={translations} />
             {/* Timeline */}
             <Grid id="timeline" item lg={6} xl={4} padding={{ xs: 2, lg: 5 }}>
               <Chip
                 label={translations.timeline.title}
-                sx={{ fontSize: 25, width: "100%", backgroundColor: "white" }}
+                sx={{ fontSize: 25, width: "100%", backgroundColor: "white", color: "black" }}
                 variant="contained"
                 size="large"
               />
