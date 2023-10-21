@@ -42,8 +42,8 @@ export default function Projects({ translations }) {
     >
       <Chip
         label={translations.projects.title}
-        sx={{ fontSize: 25, width: "100%", backgroundColor: "white", color: "black" }}
-        variant="contained"
+        color="secondary"
+        sx={{ fontSize: 25, width: "100%" }}
         size="large"
       />
       {projectsArray.map((project, key) => (

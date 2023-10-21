@@ -120,7 +120,7 @@ function App() {
             justifyContent="space-around"
             sx={{
               display: { xs: "flex", lg: "none" },
-              backgroundColor: "#d98585",
+              backgroundColor: "#666666",
               maxHeight: "52px",
             }}
             padding={1}
@@ -130,7 +130,7 @@ function App() {
             {mobileLinks.map((link, key) =>
               key === 0 ? (
                 <Link
-                  color="inherit"
+                  color="black"
                   key={key}
                   target="_blank"
                   underline="none"
@@ -141,7 +141,7 @@ function App() {
                 </Link>
               ) : (
                 <Link
-                  color="inherit"
+                  color="black"
                   key={key}
                   target={key === 2 ? "_self" : "_blank"}
                   underline="none"
@@ -321,8 +321,9 @@ function App() {
             {/* Timeline */}
             <Grid id="timeline" item lg={6} xl={4} padding={{ xs: 2, lg: 5 }}>
               <Chip
+                color="warning"
                 label={translations.timeline.title}
-                sx={{ fontSize: 25, width: "100%", backgroundColor: "white", color: "black" }}
+                sx={{ fontSize: 25, width: "100%" }}
                 variant="contained"
                 size="large"
               />
