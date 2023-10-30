@@ -1,7 +1,19 @@
 import { Launch } from "@mui/icons-material";
-import { Box, Card, Chip, Grid, Link, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  Chip,
+  Grid,
+  Link,
+  Pagination,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
 
 export default function Projects({ translations }) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pagesNumber, setPagesNumber] = useState(2);
+
   const projectsArray = [
     {
       name: "Fake spotify",
@@ -10,6 +22,7 @@ export default function Projects({ translations }) {
       description: translations.projects.projectOneDescription,
       link: "https://github.com/LLEGIT/fake_spotify",
       alt: "Fake Spotify logo",
+      page: 1,
     },
     {
       name: "Stravabien",
@@ -18,6 +31,7 @@ export default function Projects({ translations }) {
       description: translations.projects.projectTwoDescription,
       link: "https://github.com/LLEGIT/Stravabien",
       alt: "Stravabien logo",
+      page: 1,
     },
     {
       name: "Star Wars Wiki",
@@ -26,6 +40,16 @@ export default function Projects({ translations }) {
       description: translations.projects.projectThreeDescription,
       link: "https://github.com/LLEGIT/star_wars_wiki",
       alt: "Star wars logo",
+      page: 1,
+    },
+    {
+      name: "Skribbl.go",
+      image:
+        "https://www.1min30.com/wp-content/uploads/2017/09/logo-empire-star-wars-1.jpg",
+      description: translations.projects.projectThreeDescription,
+      link: "https://github.com/LLEGIT/star_wars_wiki",
+      alt: "Star wars logo",
+      page: 2,
     },
   ];
 
@@ -50,11 +74,10 @@ export default function Projects({ translations }) {
         <Card
           sx={{
             padding: 2,
-            display: "flex",
+            display: project.page === currentPage ? "flex" : "none",
             flexDirection: "column",
             gap: 2,
           }}
-          key={key}
         >
           <Box display="flex" gap={3}>
             <Box
@@ -87,6 +110,14 @@ export default function Projects({ translations }) {
           </Link>
         </Card>
       ))}
+      <Box
+        padding={1}
+        borderRadius={3}
+        width="fit-content"
+        sx={{ backgroundColor: "#202020" }}
+      >
+        <Pagination onChange={(e) => setCurrentPage(e.target.value)} count={pagesNumber} color="secondary" shape="rounded" />
+      </Box>
     </Grid>
   );
 }
