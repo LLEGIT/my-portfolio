@@ -10,8 +10,8 @@ export default function Map() {
   };
 
   const defaultCenter = {
-    lat: 50.6333,
-    lng: 3.0667,
+    lat: 44.8333,
+    lng: -0.5667,
   };
 
   return (
